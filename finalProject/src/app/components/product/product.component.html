@@ -1,0 +1,23 @@
+<h1 class="mt-xl" *ngIf="product">{{product.title}}</h1>
+
+<div class="product-container f-center" *ngIf="product">
+    <div class="img-wrapper">
+        <img [src]="product.images[0]" alt="">
+    </div>
+    <div class="product-info f-center-col">
+        <!-- <h2 class="product-title text-center"></h2> -->
+        <h4 class="product-category">Category: {{product.category.name}}</h4>
+        <h3 class="product-price">Price: ${{product.price}}</h3>
+        <p class="product-description">{{product.description}}</p>
+        <button>
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front text">Buy Now</span>
+        </button>
+    </div>
+
+
+
+</div>
+
+<app-only4u (productChanged)="handleChange($event)"></app-only4u>

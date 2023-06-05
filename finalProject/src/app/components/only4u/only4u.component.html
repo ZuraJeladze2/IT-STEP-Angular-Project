@@ -1,0 +1,82 @@
+<h2 class="mt">today is only for you</h2>
+<!-- <br>
+<button (click)="productsArrayManipulations()" style="border: 2px solid black; margin: 20px">Action!</button>
+<br> -->
+<a class="toProducts" style="float:right" [routerLink]="['/products']">
+    <button>
+        <p>Products</p>
+        <svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+        </svg>
+    </button>
+</a>
+
+<div class="only4u-container f-center mt">
+
+
+    <!-- id unda chavuwero da mere ma aidis gamoviyeneb routeshi -->
+    <div class="only4u-card" *ngFor="let card of shortProductsArray">
+        <div class="img-wrapper">
+            <img [src]="card.category.image" alt="product image">
+        </div>
+        <div class="item-info">
+            <h5 class="item-category">
+                {{card.category.name}}
+            </h5>
+            <h3 class="item-name">{{card.title}}</h3>
+            <h3 class="price">${{card.price}}</h3>
+            <div class="review">
+                <div class="starBG">
+                    <div class="star f-center">
+                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.49971 8.01548L2.10042 10L3.02455 6.2963L0 3.81979L3.97009 3.51575L5.49971 0L7.02934 3.51575L11 3.81979L7.97487 6.2963L8.89901 10L5.49971 8.01548Z" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+                4.7
+            </div>
+            <a [routerLink]="['/products', card.id]" (click)="handleChange(card.id)" (click)="scrollToTop()" class="check-out">
+                <button class="learn-more">
+                    <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Check Out!</span>
+                  </button>
+            </a>
+        </div>
+
+    </div>
+    
+    <!-- dabla prosta HTML -->
+    
+    <!-- <div class="only4u-card">
+        <div class="img-wrapper">
+            <img src="https://media.4rgos.it/i/Argos/3319-m0014-m007-m050-asym-m008-m022-laptop-guide-248175189-hero?maxW=768&bg=rgb(255,255,255)&qlt=75&fmt.jpeg.interlaced=true" alt="Laptop">
+        </div>
+        <div class="item-info">
+            <h5 class="item-category">
+                computer & laptop
+            </h5>
+            <h3 class="item-name">Laptop name</h3>
+            <h3 class="price">$399</h3>
+            <div class="review">
+                <div class="starBG">
+                    <div class="star f-center">
+                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.49971 8.01548L2.10042 10L3.02455 6.2963L0 3.81979L3.97009 3.51575L5.49971 0L7.02934 3.51575L11 3.81979L7.97487 6.2963L8.89901 10L5.49971 8.01548Z" fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+                4.7
+            </div>
+            <a routerLink="" class="check-out">
+                check out!
+            </a>
+            <div class="sold-q">
+                390 sold
+            </div>
+        </div>
+
+    </div> -->
+
+</div>

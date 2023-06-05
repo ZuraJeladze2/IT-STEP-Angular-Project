@@ -1,0 +1,16 @@
+<h1 class="text-center mt-xl" *ngIf="!isAdmin">Nothing to see here</h1>
+<form [formGroup]="myForm" class="admin-form f-center-col" (ngSubmit)="setIdAndPush()" *ngIf="isAdmin">
+    
+    <input type="text" formControlName="title" placeholder="title">
+    <input type="text" formControlName="description" placeholder="description">
+    <input type="text" formControlName="price" placeholder="price">
+    <input type="text" formControlName="image" placeholder="image">
+    <div formGroupName="category">
+        <input type="text" formControlName="name" placeholder="category">
+      </div>
+    <button type="submit" class="mt">
+        <span class="shadow"></span>
+        <span class="edge"></span>
+        <span class="front text">Add</span>
+    </button>
+</form>

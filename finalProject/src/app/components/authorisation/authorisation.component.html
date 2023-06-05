@@ -1,0 +1,33 @@
+<div class="wrapper f-center-col">
+    <h2 *ngIf="!signInModal && !signUpModal">sign in and registration</h2>
+    <button class="signIn" (click)="signInForm()" *ngIf="!signInModal && !signUpModal">Sign in</button>
+    <button class="signUp" (click)="signUpForm()" *ngIf="!signInModal && !signUpModal">Sign up</button>
+
+
+    <form [formGroup]="authForm" class="f-center-col" *ngIf="signInModal">
+        <div style="position: relative;">
+            <h2>Sign In</h2>
+            <h3 *ngIf="authError" class="errorMessage">Invalid Email or Password</h3>
+        </div>
+        <input type="email" formControlName="email" placeholder="Enter E-mail">
+        <input type="password" formControlName="password" placeholder="Enter password">
+        <div class="btn-wrapper f-center">
+            <button (click)="toBack()">Back</button>
+            <button tyoe="submit" (click)="onSignIn(authForm)">Sign In</button>
+        </div>
+    </form>
+
+    <form [formGroup]="authForm" class="f-center-col" *ngIf="signUpModal">
+        <div style="position: relative;">
+            <h2>Sign Up</h2>
+            <h3 *ngIf="authError" class="errorMessage">Something went wrong, maybe you are already registered</h3>
+        </div>
+        <input type="email" formControlName="email" placeholder="Enter E-mail">
+        <input type="password" formControlName="password" placeholder="Enter password">
+        <div class="btn-wrapper f-center">
+            <button (click)="toBack()">Back</button>
+            <button tyoe="submit" (click)="onSignUp(authForm)">Sign Up</button>
+        </div>
+    </form>
+
+</div>

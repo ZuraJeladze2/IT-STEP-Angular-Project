@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="navbar">
+        <div class="logo">
+            Logo
+        </div>
+        <div class="navbar-links">
+            <div class="navbar-link">
+                <a routerLink="">Home</a>
+            </div>
+            <div class="navbar-link">
+                <a (click)="toProducts()" routerLink="products">All Products</a>
+            </div>
+            <div class="navbar-link">
+                <a routerLink="authorisation" *ngIf="!loggedIn">Authorisation</a>
+                <!-- <a routerLink="authorisation" *ngIf="loggedIn">{{userEmail}}</a> -->
+            </div>
+            <div class="navbar-link">
+                <a routerLink="authorisation" *ngIf="loggedIn" (click)="logOut">Log Out</a>
+            </div>
+        </div>
+    </div>
+</div>
